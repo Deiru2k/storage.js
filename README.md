@@ -8,7 +8,7 @@ ES6 class for REST-like management local- & sessionStorage.
 
 ## Install
 
-    npm install --save dtstorage.js
+    npm install --save dtstorage
 
 ## Usage
 #### constructor(provider)
