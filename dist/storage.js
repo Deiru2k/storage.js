@@ -1,4 +1,3 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -93,44 +92,3 @@ var dtStorage = (function () {
 
 exports['default'] = dtStorage;
 module.exports = exports['default'];
-
-},{"./utils":2}],2:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-var utils = {
-  JSONToString: function JSONToString(value) {
-    return JSON.stringify(value);
-  },
-
-  stringToJSON: function stringToJSON(value) {
-    if (typeof value !== 'string') {
-      return undefined;
-    }
-
-    try {
-      return JSON.parse(value);
-    } catch (e) {
-      return value || undefined;
-    }
-  },
-
-  isEmpty: function isEmpty(obj) {
-    return !Object.keys(obj).length > 0;
-  },
-
-  getObjectIdInArrayByKey: function getObjectIdInArrayByKey(source, key, value) {
-    for (var i = 0; i < source.length; i++) {
-      if (source[i][key] === value) {
-        return i;
-      }
-    }
-  }
-};
-
-exports['default'] = utils;
-module.exports = exports['default'];
-
-},{}]},{},[1]);
