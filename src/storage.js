@@ -3,7 +3,7 @@ import utils from './utils';
 class dtStorage {
   constructor(provider) {
     this.provider = provider;
-    this.storage = JSON.parse(provider);
+    this.storage = JSON.parse(JSON.stringify(provider));
   }
 
   get(resource) {

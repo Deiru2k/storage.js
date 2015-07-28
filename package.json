@@ -1,10 +1,10 @@
 {
   "name": "dtstorage",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "ES6 class for REST-like management local- & sessionStorage",
   "main": "dist/storage.js",
   "scripts": {
-    "build": "$(npm bin)/babel src --out-dir dist"
+    "prepublish": "$(npm bin)/babel src --out-dir dist"
   },
   "repository": {
     "type": "git",

@@ -19,7 +19,7 @@ var dtStorage = (function () {
     _classCallCheck(this, dtStorage);
 
     this.provider = provider;
-    this.storage = JSON.parse(provider);
+    this.storage = JSON.parse(JSON.stringify(provider));
   }
 
   _createClass(dtStorage, [{
