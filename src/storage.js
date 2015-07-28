@@ -8,13 +8,19 @@ class dtStorage {
 
   get(resource) {
     const { provider, storage } = this;
-    const data = storage[resource];
+    let data = storage[resource];
 
     if(data) {
-      return data;
+      try {
+        data = JSON.parse(data);
+      } catch(e) {
+        console.log(e);
+      }
     } else {
       throw new ReferenceError(404);
     }
+
+    return data;
   }
 
   post(resource, body) {
