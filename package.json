@@ -1,10 +1,12 @@
 {
   "name": "dtstorage",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "ES6 class for REST-like management local- & sessionStorage",
-  "main": "src/storage.js",
+  "main": "dist/storage.min.js",
   "scripts": {
-    "build": "browserify -t babelify src/storage.js > dist/storage.js"
+    "build:browserify": "$(npm bin)/browserify -t babelify src/storage.js > dist/storage.js",
+    "build:uglify": "$(npm bin)/uglifyjs dist/storage.js --output dist/storage.min.js --source-map dist/storage.min.js.map",
+    "publish": "npm run build:browserify && npm run build:uglify && npm publish"
   },
   "repository": {
     "type": "git",
@@ -23,9 +25,7 @@
   "homepage": "https://github.com/dtrussia/storage.js#readme",
   "devDependencies": {
     "babelify": "^6.1.3",
-    "browserify": "^11.0.0"
-  },
-  "dependencies": {
-    "clone": "^1.0.2"
+    "browserify": "^11.0.0",
+    "uglify-js": "^2.4.24"
   }
 }

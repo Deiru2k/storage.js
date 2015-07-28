@@ -1,10 +1,9 @@
-import clone from 'clone';
 import utils from './utils';
 
 class dtStorage {
   constructor(provider) {
     this.provider = provider;
-    this.storage = clone(provider);
+    this.storage = JSON.parse(provider);
   }
 
   get(resource) {
