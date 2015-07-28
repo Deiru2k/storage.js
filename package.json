@@ -6,7 +6,7 @@
   "scripts": {
     "build:browserify": "$(npm bin)/browserify -t babelify src/storage.js > dist/storage.js",
     "build:uglify": "$(npm bin)/uglifyjs dist/storage.js --output dist/storage.min.js --source-map dist/storage.min.js.map",
-    "publish": "npm run build:browserify && npm run build:uglify && npm publish"
+    "build": "npm run build:browserify && npm run build:uglify"
   },
   "repository": {
     "type": "git",
