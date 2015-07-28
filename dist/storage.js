@@ -10,9 +10,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var _utils = require('./utils');
+var _dtutils = require('dtutils');
 
-var _utils2 = _interopRequireDefault(_utils);
+var _dtutils2 = _interopRequireDefault(_dtutils);
 
 var dtStorage = (function () {
   function dtStorage(provider) {
@@ -51,7 +51,7 @@ var dtStorage = (function () {
       storage[resource] = body;
 
       try {
-        provider.setItem(resource, _utils2['default'].JSONToString(body));
+        provider.setItem(resource, _dtutils2['default'].JSONToString(body));
 
         return storage[resource];
       } catch (e) {
@@ -67,10 +67,10 @@ var dtStorage = (function () {
       storage[resource][key] = value;
 
       try {
-        var data = _utils2['default'].stringToJSON(provider.getItem(resource));
+        var data = _dtutils2['default'].stringToJSON(provider.getItem(resource));
         data[key] = value;
 
-        provider.setItem(resource, _utils2['default'].JSONToString(data));
+        provider.setItem(resource, _dtutils2['default'].JSONToString(data));
       } catch (e) {
         throw new Error(e);
       }

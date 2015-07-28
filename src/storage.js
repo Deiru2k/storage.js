@@ -1,4 +1,4 @@
-import utils from './utils';
+import utils from 'dtutils';
 
 class dtStorage {
   constructor(provider) {
