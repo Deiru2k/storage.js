@@ -37,7 +37,7 @@ var dtStorage = (function () {
           console.log(e);
         }
       } else {
-        throw new ReferenceError(404);
+        return null;
       }
 
       return data;
