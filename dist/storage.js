@@ -35,8 +35,8 @@ var dtStorage = (function () {
       if (data) {
         try {
           storage[resource] = JSON.parse(data);
-        } catch (e) {
-          console.log(e);
+        } finally {
+          return storage[resource];
         }
       } else {
         return null;
