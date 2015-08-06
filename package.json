@@ -1,6 +1,6 @@
 {
   "name": "dtstorage",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "ES6 class for REST-like management local- & sessionStorage",
   "main": "dist/storage.js",
   "scripts": {

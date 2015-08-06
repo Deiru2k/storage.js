@@ -7,12 +7,12 @@ class dtStorage {
   }
 
   get(resource) {
-    const { provider, storage } = this;
-    let data = storage[resource];
+    const { storage } = this;
+    const data = storage[resource];
 
-    if(data) {
+    if (data) {
       try {
-        data = JSON.parse(data);
+        storage[resource] = JSON.parse(data);
       } catch(e) {
         console.log(e);
       }
@@ -45,7 +45,7 @@ class dtStorage {
       let data = utils.stringToJSON(provider.getItem(resource));
       data[key] = value;
 
-      provider.setItem(resource, utils.JSONToString(data))
+      provider.setItem(resource, utils.JSONToString(data));
     } catch(e) {
       throw new Error(e);
     }

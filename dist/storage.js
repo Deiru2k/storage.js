@@ -25,14 +25,13 @@ var dtStorage = (function () {
   _createClass(dtStorage, [{
     key: 'get',
     value: function get(resource) {
-      var provider = this.provider;
       var storage = this.storage;
 
       var data = storage[resource];
 
       if (data) {
         try {
-          data = JSON.parse(data);
+          storage[resource] = JSON.parse(data);
         } catch (e) {
           console.log(e);
         }
