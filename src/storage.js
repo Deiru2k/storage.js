@@ -7,7 +7,7 @@ class dtStorage {
   }
 
   get(resource) {
-    const { storage } = this;
+    const { provider, storage } = this;
     const data = storage[resource];
 
     if (data) {
@@ -38,6 +38,10 @@ class dtStorage {
 
   patch(resource, key, value) {
     const { provider, storage } = this;
+
+    if (!storage[resource]) {
+      this.post(resource, { [key]: null});
+    }
 
     storage[resource][key] = value;
 

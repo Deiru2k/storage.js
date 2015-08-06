@@ -8,6 +8,8 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 var _dtutils = require('dtutils');
@@ -25,6 +27,7 @@ var dtStorage = (function () {
   _createClass(dtStorage, [{
     key: 'get',
     value: function get(resource) {
+      var provider = this.provider;
       var storage = this.storage;
 
       var data = storage[resource];
@@ -62,6 +65,10 @@ var dtStorage = (function () {
     value: function patch(resource, key, value) {
       var provider = this.provider;
       var storage = this.storage;
+
+      if (!storage[resource]) {
+        this.post(resource, _defineProperty({}, key, null));
+      }
 
       storage[resource][key] = value;
 
