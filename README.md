@@ -1,10 +1,10 @@
 # dtStorage.js
 
-ES6 class for REST-like management local- & sessionStorage.
+ES6 class for REST-like management of local and session storages.
 
 ## Features
 * ES6
-* local copy of storage (Safari [have bug with storage in private browsing mode](http://stackoverflow.com/questions/14555347/html5-localstorage-error-with-safari-quota-exceeded-err-dom-exception-22-an))
+* local copy of storage (Safari [has a bug with storage in private browsing mode](http://stackoverflow.com/questions/14555347/html5-localstorage-error-with-safari-quota-exceeded-err-dom-exception-22-an))
 
 ## Install
 
